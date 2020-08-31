@@ -1,0 +1,64 @@
+// Файл обнуляющих стилей.
+@import "nullstyle.scss";
+// Переменные для блоков
+$pk:100px;
+$color_1:#000;
+$color_2:#fff;
+//Шаблон
+%aaa{
+	border-bottom: 5px dashed red;
+}
+@mixin fontz($f){
+	font-size: $f;
+}
+.block{
+	width: 300px/960px*100%;
+	background-color: #134564;
+	padding: 30px;
+	font-size: 50px;
+	line-height: 60px;
+	>p{
+		color: red;
+	}
+	
+}
+   .block--big {
+   	font-size: 100px;
+}
+    .link {
+    	color: blue;
+    	text-decoration: underline;
+    	font-size: $pk;
+    	.block &{
+    		font-size: $pk;
+    	}
+    	&:hover{
+    		$color_1:#000;
+    	}
+    	@extend %aaa;
+    	&:active{
+    		color: yellow;
+    	}
+    	&:focus{
+    		color: crimson;
+    	}
+    	&:before{
+    		color: purple;
+    	}
+
+}
+   .block_text {
+     font-size: 80px;
+     span{
+		$color_2:#fff;
+	}
+}
+    .link-2 {
+     @include shtepa($t);
+     border-bottom: 5px dashed red;
+     font-size: $pk;
+     $color_2:#fff;
+}
+%aaa{
+	border-bottom: 5px dashed red;
+}
